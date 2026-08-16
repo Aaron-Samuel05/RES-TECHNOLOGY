@@ -13,6 +13,49 @@ document.querySelectorAll('.main-nav a').forEach(link => {
   });
 });
 
+// Hero image carousel: rotates through the available hero visuals.
+const hero = document.querySelector('.hero');
+const heroDots = [...document.querySelectorAll('.hero-dots > *')];
+const heroImages = [
+  'assets/hero-bearing.jpg',
+  'assets/product-windmill.jpg',
+  'assets/product-powerattack.jpg'
+];
+let heroIndex = 0;
+let heroTimer;
+
+function setHeroSlide(index) {
+  if (!hero) return;
+  heroIndex = (index + heroImages.length) % heroImages.length;
+  hero.style.setProperty('--hero-image', `url("${heroImages[heroIndex]}")`);
+  heroDots.forEach((dot, i) => dot.classList.toggle('active', i === heroIndex));
+}
+
+heroDots.forEach((dot, index) => {
+  dot.setAttribute('role', 'button');
+  dot.setAttribute('tabindex', '0');
+  dot.setAttribute('aria-label', `Show hero slide ${index + 1}`);
+  dot.addEventListener('click', () => {
+    setHeroSlide(index);
+    startHeroAutoplay();
+  });
+  dot.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      setHeroSlide(index);
+      startHeroAutoplay();
+    }
+  });
+});
+
+function startHeroAutoplay() {
+  clearInterval(heroTimer);
+  heroTimer = setInterval(() => setHeroSlide(heroIndex + 1), 5000);
+}
+
+setHeroSlide(0);
+startHeroAutoplay();
+
 const sections = [...document.querySelectorAll('main section[id]')];
 const navLinks = [...document.querySelectorAll('.main-nav a:not(.quote-btn)')];
 
