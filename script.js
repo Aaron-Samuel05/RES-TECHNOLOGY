@@ -24,57 +24,6 @@ const observer = new IntersectionObserver(entries => {
 
 sections.forEach(section => observer.observe(section));
 
-// Carousel functionality
-const heroImages = [
-  'assets/hero-bearing.jpg',
-  'assets/product-crossed-roller.jpg',
-  'assets/product-slewing.jpg'
-];
-
-let currentImageIndex = 0;
-const hero = document.querySelector('.hero');
-const heroDots = document.querySelectorAll('.hero-dots > *');
-const prevBtn = document.querySelector('.hero-nav-prev');
-const nextBtn = document.querySelector('.hero-nav-next');
-
-function updateHeroImage() {
-  hero.style.backgroundImage = `url("${heroImages[currentImageIndex]}")`;
-  heroDots.forEach((dot, index) => {
-    dot.classList.toggle('active', index === currentImageIndex);
-  });
-}
-
-function nextImage() {
-  currentImageIndex = (currentImageIndex + 1) % heroImages.length;
-  updateHeroImage();
-}
-
-function prevImage() {
-  currentImageIndex = (currentImageIndex - 1 + heroImages.length) % heroImages.length;
-  updateHeroImage();
-}
-
-function goToImage(index) {
-  currentImageIndex = index;
-  updateHeroImage();
-}
-
-prevBtn?.addEventListener('click', prevImage);
-nextBtn?.addEventListener('click', nextImage);
-
-heroDots.forEach((dot, index) => {
-  dot.addEventListener('click', () => goToImage(index));
-});
-
-// Auto-rotate carousel every 6 seconds
-let autoRotateTimer = setInterval(nextImage, 6000);
-
-// Pause auto-rotate on hover
-hero?.addEventListener('mouseenter', () => clearInterval(autoRotateTimer));
-hero?.addEventListener('mouseleave', () => {
-  autoRotateTimer = setInterval(nextImage, 6000);
-});
-
 document.getElementById('quoteForm')?.addEventListener('submit', e => {
   e.preventDefault();
   const form = new FormData(e.currentTarget);
