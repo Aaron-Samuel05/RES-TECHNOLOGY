@@ -1,37 +1,46 @@
 <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-  <!-- Outer circle background -->
-  <circle cx="100" cy="100" r="95" fill="white" stroke="#f0f0f0" stroke-width="2"/>
+  <!-- Background -->
+  <rect width="200" height="200" fill="#000000"/>
+  
+  <!-- Outer white circle border -->
+  <circle cx="100" cy="100" r="98" fill="none" stroke="white" stroke-width="5"/>
   
   <!-- Directional marks - Top -->
-  <line x1="100" y1="12" x2="100" y2="28" stroke="#FF6600" stroke-width="3" stroke-linecap="round"/>
+  <line x1="100" y1="8" x2="100" y2="28" stroke="white" stroke-width="4" stroke-linecap="round"/>
   
   <!-- Directional marks - Right -->
-  <line x1="188" y1="100" x2="172" y2="100" stroke="#FF6600" stroke-width="3" stroke-linecap="round"/>
+  <line x1="192" y1="100" x2="172" y2="100" stroke="white" stroke-width="4" stroke-linecap="round"/>
   
   <!-- Directional marks - Bottom -->
-  <line x1="100" y1="188" x2="100" y2="172" stroke="#FF6600" stroke-width="3" stroke-linecap="round"/>
+  <line x1="100" y1="192" x2="100" y2="172" stroke="white" stroke-width="4" stroke-linecap="round"/>
   
   <!-- Directional marks - Left -->
-  <line x1="12" y1="100" x2="28" y2="100" stroke="#FF6600" stroke-width="3" stroke-linecap="round"/>
+  <line x1="8" y1="100" x2="28" y2="100" stroke="white" stroke-width="4" stroke-linecap="round"/>
   
-  <!-- Outer orange arcs -->
-  <path d="M 145 55 A 63.64 63.64 0 0 1 155 65" fill="none" stroke="#FF6600" stroke-width="10" stroke-linecap="round"/>
-  <path d="M 135 145 A 63.64 63.64 0 0 1 55 155" fill="none" stroke="#FF6600" stroke-width="10" stroke-linecap="round"/>
-  <path d="M 65 45 A 63.64 63.64 0 0 1 145 55" fill="none" stroke="#FF6600" stroke-width="10" stroke-linecap="round"/>
-  <path d="M 155 135 A 63.64 63.64 0 0 1 135 145" fill="none" stroke="#FF6600" stroke-width="10" stroke-linecap="round"/>
+  <!-- Outer orange arcs (top-right) -->
+  <path d="M 145 50 A 65 65 0 0 1 160 65" fill="none" stroke="#FF6600" stroke-width="14" stroke-linecap="round"/>
   
-  <!-- Outer black circle -->
-  <circle cx="100" cy="100" r="58" fill="none" stroke="#1a1a1a" stroke-width="8"/>
+  <!-- Outer orange arcs (bottom-right) -->
+  <path d="M 160 135 A 65 65 0 0 1 145 150" fill="none" stroke="#FF6600" stroke-width="14" stroke-linecap="round"/>
   
-  <!-- Inner gray circle -->
-  <circle cx="100" cy="100" r="48" fill="none" stroke="#cccccc" stroke-width="6"/>
+  <!-- Outer orange arcs (bottom-left) -->
+  <path d="M 55 150 A 65 65 0 0 1 40 135" fill="none" stroke="#FF6600" stroke-width="14" stroke-linecap="round"/>
   
-  <!-- Inner orange circle -->
-  <circle cx="100" cy="100" r="40" fill="none" stroke="#FF6600" stroke-width="3"/>
+  <!-- Outer orange arcs (top-left) -->
+  <path d="M 40 65 A 65 65 0 0 1 55 50" fill="none" stroke="#FF6600" stroke-width="14" stroke-linecap="round"/>
   
-  <!-- Center circle -->
-  <circle cx="100" cy="100" r="35" fill="white"/>
+  <!-- Outer dashed black circle -->
+  <circle cx="100" cy="100" r="62" fill="none" stroke="#000000" stroke-width="8" stroke-dasharray="8,8"/>
+  
+  <!-- Middle gray circle -->
+  <circle cx="100" cy="100" r="50" fill="none" stroke="#999999" stroke-width="5"/>
+  
+  <!-- Inner white circle -->
+  <circle cx="100" cy="100" r="42" fill="white"/>
+  
+  <!-- Inner gray circle (subtle) -->
+  <circle cx="100" cy="100" r="38" fill="none" stroke="#DDDDDD" stroke-width="2"/>
   
   <!-- RES text -->
-  <text x="100" y="112" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#FF6600" text-anchor="middle" dominant-baseline="middle">RES</text>
+  <text x="100" y="115" font-family="Arial, sans-serif" font-size="52" font-weight="800" fill="#FF6600" text-anchor="middle" dominant-baseline="middle">RES</text>
 </svg>
