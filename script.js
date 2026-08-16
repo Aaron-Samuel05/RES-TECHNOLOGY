@@ -13,14 +13,18 @@ document.querySelectorAll('.main-nav a').forEach(link => {
   });
 });
 
-// Hero image carousel: rotates through the available hero visuals.
+// Real product imagery referenced from the partner/product sources.
 const hero = document.querySelector('.hero');
 const heroDots = [...document.querySelectorAll('.hero-dots > *')];
 const heroImages = [
-  'assets/hero-bearing.jpg',
-  'assets/product-windmill.jpg',
-  'assets/product-powerattack.jpg'
+  'https://www.general-tp.com/1999-large_default/couronne-de-rotation-imo-wd-l-04193-04553.jpg',
+  'https://image.made-in-china.com/2f0j00dvZGwDImNjqJ/Zys-Bearing-for-Wind-Turbine-Generator-Yaw-Bearing-and-Pitch-Bearing-010-30-560.jpg',
+  'https://image.made-in-china.com/2f0j00mSptdPvBCufY/800mm-2400mm-Width-Steel-Cord-Conveyor-Belts-Made-in-China.webp',
+  'https://shop.hilmanrollers.com/cdn/shop/products/pa30ccblue_1200x.jpg?v=1610463099'
 ];
+
+heroImages.forEach(src => { const img = new Image(); img.src = src; });
+
 let heroIndex = 0;
 let heroTimer;
 
@@ -39,7 +43,7 @@ heroDots.forEach((dot, index) => {
     setHeroSlide(index);
     startHeroAutoplay();
   });
-  dot.addEventListener('keydown', (event) => {
+  dot.addEventListener('keydown', event => {
     if (event.key === 'Enter' || event.key === ' ') {
       event.preventDefault();
       setHeroSlide(index);
@@ -50,7 +54,7 @@ heroDots.forEach((dot, index) => {
 
 function startHeroAutoplay() {
   clearInterval(heroTimer);
-  heroTimer = setInterval(() => setHeroSlide(heroIndex + 1), 5000);
+  heroTimer = setInterval(() => setHeroSlide(heroIndex + 1), 5500);
 }
 
 setHeroSlide(0);
