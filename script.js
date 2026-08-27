@@ -1,55 +1,29 @@
-const menu = document.querySelector('.menu-toggle');
-const nav = document.querySelector('.main-nav');
+const menu=document.querySelector('.menu-toggle');
+const nav=document.querySelector('.main-nav');
 menu?.addEventListener('click',()=>{nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(nav.classList.contains('open')))});
 document.querySelectorAll('.main-nav a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu?.setAttribute('aria-expanded','false')}));
 
 const RES_EMAIL='sales@restech.in';
 const TEST_EMAIL='aaronsamuel0205@gmail.com';
-const RES_LOGO='data:image/webp;base64,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';
-document.querySelectorAll('.brand-lockup,.footer-brand img').forEach(img=>img.src=RES_LOGO);
-document.querySelectorAll('a[href^="mailto:"]').forEach(a=>{a.href=`mailto:${RES_EMAIL}`;a.textContent=RES_EMAIL});
+const RES_LOGO='data:image/webp;base64,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';
+
+document.querySelectorAll('.brand-lockup,.footer-brand img').forEach(img=>{img.src=RES_LOGO;img.alt='RES Technologies'});
+let favicon=document.querySelector('link[rel~="icon"]');
+if(!favicon){favicon=document.createElement('link');favicon.rel='icon';document.head.appendChild(favicon)}
+favicon.type='image/webp';favicon.href=RES_LOGO;
+document.querySelectorAll('a[href^="mailto:"]').forEach(a=>{a.href=`mailto:${RES_EMAIL}`;if(a.textContent.includes('@'))a.textContent=RES_EMAIL});
+
+document.getElementById('year')&&(document.getElementById('year').textContent=new Date().getFullYear());
+document.querySelector('.powerattack-card img')?.setAttribute('src','assets/powerattack-accurate.svg');
 
 const quoteForm=document.getElementById('quoteForm');
 if(quoteForm){
-  const note=quoteForm.querySelector('small,p')||quoteForm.parentElement.querySelector('small,p');
-  if(note) note.textContent='Submit your enquiry and our team will receive it directly.';
-  const button=quoteForm.querySelector('button[type="submit"]');
-  const status=document.createElement('p');
-  status.className='form-status';
-  status.setAttribute('aria-live','polite');
-  status.style.cssText='margin:12px 0 0;font-weight:600;display:none;';
-  quoteForm.appendChild(status);
-  quoteForm.addEventListener('submit',async e=>{
-    e.preventDefault();
-    const originalText=button?.textContent;
-    if(button){button.disabled=true;button.textContent='SENDING...';}
-    status.style.display='none';
-    try{
-      const data=Object.fromEntries(new FormData(quoteForm).entries());
-      data._subject=`New RES Technologies Quote Enquiry — ${data.name||'Website visitor'}`;
-      data._cc=TEST_EMAIL;
-      data._template='table';
-      data._captcha='false';
-      data._url='https://restechnologies.vercel.app/#contact';
-      const response=await fetch(`https://formsubmit.co/ajax/${RES_EMAIL}`,{
-        method:'POST',
-        headers:{'Content-Type':'application/json','Accept':'application/json'},
-        body:JSON.stringify(data)
-      });
-      if(!response.ok) throw new Error('Submission failed');
-      status.textContent='Thank you. Your enquiry has been sent successfully.';
-      status.style.color='#e86624';
-      status.style.display='block';
-      quoteForm.reset();
-    }catch(error){
-      status.textContent='Sorry, we could not send your enquiry. Please try again or email us directly.';
-      status.style.color='#b42318';
-      status.style.display='block';
-    }finally{
-      if(button){button.disabled=false;button.textContent=originalText;}
-    }
-  });
+ const note=quoteForm.querySelector('.form-note');if(note)note.textContent='Submit your enquiry and our team will receive it directly.';
+ const button=quoteForm.querySelector('button[type="submit"]');
+ let status=quoteForm.querySelector('.form-status');if(!status){status=document.createElement('p');status.className='form-status';status.setAttribute('aria-live','polite');quoteForm.appendChild(status)}
+ quoteForm.addEventListener('submit',async e=>{
+  e.preventDefault();const original=button?.textContent||'REQUEST A QUOTE';if(button){button.disabled=true;button.textContent='SENDING...'}status.textContent='';
+  const data=new FormData(quoteForm);data.append('_subject','New RES Technologies website enquiry');data.append('_template','table');data.append('_cc',TEST_EMAIL);data.append('_captcha','false');
+  try{const r=await fetch(`https://formsubmit.co/ajax/${RES_EMAIL}`,{method:'POST',headers:{Accept:'application/json'},body:data});if(!r.ok)throw new Error('Submission failed');quoteForm.reset();status.textContent='Thank you! Your enquiry has been sent successfully.';status.style.color='#17803d'}catch(err){status.textContent='Sorry, we could not send your enquiry. Please email us directly at '+RES_EMAIL+'.';status.style.color='#c0392b'}finally{if(button){button.disabled=false;button.textContent=original}}
+ });
 }
-
-document.querySelector('.powerattack-card img')?.setAttribute('src','assets/powerattack-accurate.svg');
-document.getElementById('year').textContent=new Date().getFullYear();
