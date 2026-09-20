@@ -342,3 +342,7 @@ main section{scroll-margin-top:96px}
   .product-card img{height:205px}
   .dark-section,.brands-section,.industries-section,.contact-section{padding-left:18px;padding-right:18px}
 }
+
+/* Top spacing correction only */
+.site-header{margin-top:0!important}
+@media(max-width:800px){.site-header{top:0!important;margin-top:0!important}}
