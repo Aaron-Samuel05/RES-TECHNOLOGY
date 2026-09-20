@@ -5,12 +5,12 @@ document.querySelectorAll('.main-nav a').forEach(a=>a.addEventListener('click',(
 
 const RES_EMAIL='sales@restech.in';
 const TEST_EMAIL='aaronsamuel0205@gmail.com';
-const RES_LOGO='assets/res-logo-clean.svg'
+const RES_LOGO='assets/res-technologies-official.svg'
 
 document.querySelectorAll('.brand-lockup,.footer-brand img').forEach(img=>{img.src=RES_LOGO;img.alt='RES Technologies'});
 let favicon=document.querySelector('link[rel~="icon"]');
 if(!favicon){favicon=document.createElement('link');favicon.rel='icon';document.head.appendChild(favicon)}
-favicon.type='image/webp';favicon.href=RES_LOGO;
+favicon.type='image/svg+xml';favicon.href=RES_LOGO;
 document.querySelectorAll('a[href^="mailto:"]').forEach(a=>{a.href=`mailto:${RES_EMAIL}`;if(a.textContent.includes('@'))a.textContent=RES_EMAIL});
 
 document.getElementById('year')&&(document.getElementById('year').textContent=new Date().getFullYear());
