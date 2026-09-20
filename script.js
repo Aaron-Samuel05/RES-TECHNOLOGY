@@ -48,7 +48,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav?.classList.cont
     layers.forEach(el=>{
       const depth=Number(el.dataset.parallax||0);
       const base=progress*depth*70;
-      el.style.transform=`translate3d(0,${base.toFixed(1)}px,0)`;
+      el.style.transform=el.classList.contains('visual-frame') ? `translate3d(0,${base.toFixed(1)}px,0) rotate(.8deg)` : `translate3d(0,${base.toFixed(1)}px,0)`;
     });
   };
   const onScroll=()=>{lastY=window.scrollY;if(!raf)raf=requestAnimationFrame(render)};
@@ -59,7 +59,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav?.classList.cont
       const r=hero.getBoundingClientRect(), x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
       layers.forEach(el=>{
         const depth=Number(el.dataset.parallax||0);
-        el.style.transform=`translate3d(${(x*depth*28).toFixed(1)}px,${(y*depth*18).toFixed(1)}px,0)`;
+        el.style.transform=el.classList.contains('visual-frame') ? `translate3d(${(x*depth*28).toFixed(1)}px,${(y*depth*18).toFixed(1)}px,0) rotate(.8deg)` : `translate3d(${(x*depth*28).toFixed(1)}px,${(y*depth*18).toFixed(1)}px,0)`;
       });
     });
     hero.addEventListener('pointerleave',()=>render());
