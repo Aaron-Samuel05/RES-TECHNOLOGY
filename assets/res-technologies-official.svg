@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 230" role="img" aria-labelledby="title desc">
+<title>RES Technologies</title>
+<desc>RES Technologies logo in orange and black.</desc>
+<g transform="translate(18 12)">
+  <g>
+    <circle cx="100" cy="103" r="78" fill="none" stroke="#555" stroke-width="7"/>
+    <circle cx="100" cy="103" r="58" fill="none" stroke="#555" stroke-width="7"/>
+    <circle cx="100" cy="103" r="42" fill="#fff"/>
+    <path d="M100 0v40M100 166v40M0 103h40M160 103h40" stroke="#f47a16" stroke-width="8" stroke-linecap="square"/>
+    <path d="M23 62a87 87 0 0 1 40-40M177 62a87 87 0 0 0-40-40M23 144a87 87 0 0 0 40 40M177 144a87 87 0 0 1-40 40" fill="none" stroke="#f47a16" stroke-width="16" stroke-linecap="butt"/>
+    <circle cx="100" cy="103" r="58" fill="none" stroke="#222" stroke-width="5" stroke-dasharray="72 15 72 15"/>
+    <text x="100" y="118" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="47" fill="#f47a16">RES</text>
+  </g>
+  <text x="230" y="122" font-family="Arial, Helvetica, sans-serif" font-size="82" font-weight="800" letter-spacing="-2" fill="#f47a16">RES TECHNOLOGIES</text>
+</g>
+</svg>
