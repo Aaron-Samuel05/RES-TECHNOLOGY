@@ -17,3 +17,13 @@
   .hero-content{padding-top:118px}
   .products-section,.dark-section,.brands-section,.industries-section,.contact-section{position:relative;z-index:2}
 }
+
+/* Premium pill controls + circular branding */
+.brand,.footer-brand img{border-radius:50%}
+.primary-btn,.secondary-btn,.quote-btn,.text-link{transition:transform .28s cubic-bezier(.2,.8,.2,1),box-shadow .28s ease,background .28s ease,border-color .28s ease}
+.primary-btn:hover,.quote-btn:hover{transform:translateY(-3px) scale(1.015);box-shadow:0 16px 34px rgba(255,100,28,.28)}.primary-btn:active,.quote-btn:active{transform:translateY(-1px) scale(.985)}
+.secondary-btn{position:relative;overflow:hidden}.secondary-btn:before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 25%,rgba(255,255,255,.12) 50%,transparent 75%);transform:translateX(-120%);transition:transform .55s ease}.secondary-btn:hover:before{transform:translateX(120%)}
+.brand-card .brand-arrow{transition:transform .28s ease}.brand-card:hover .brand-arrow{transform:translate(3px,-3px)}
+.product-card div span,.brand-card .brand-arrow,.text-link span{display:inline-block}.product-card:hover div span{transform:translate(3px,-3px);transition:transform .28s ease}
+.footer-brand img{width:68px!important;height:68px!important;object-fit:cover!important;object-position:center!important;border-radius:50%!important;background:#fff;padding:0!important}
+@media(max-width:800px){.brand{border-radius:50%!important}.footer-brand img{width:64px!important;height:64px!important;border-radius:50%!important}.brand-card{min-height:175px}.brand-strip{grid-template-columns:1fr;gap:12px}}
