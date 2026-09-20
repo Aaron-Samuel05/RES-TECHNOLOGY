@@ -346,3 +346,21 @@ main section{scroll-margin-top:96px}
 /* Top spacing correction only */
 .site-header{margin-top:0!important}
 @media(max-width:800px){.site-header{top:0!important;margin-top:0!important}}
+
+/* Fix header flow gap: keep glass navbar over the hero without reserving a white row */
+.site-header{
+  position:fixed!important;
+  top:18px!important;
+  left:50%!important;
+  transform:translateX(-50%)!important;
+  margin:0!important;
+}
+@media(max-width:800px){
+  .site-header{
+    position:fixed!important;
+    top:8px!important;
+    left:50%!important;
+    transform:translateX(-50%)!important;
+    margin:0!important;
+  }
+}
