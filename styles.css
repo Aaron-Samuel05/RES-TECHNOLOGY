@@ -47,3 +47,67 @@ footer{padding:40px max(7%,calc((100vw - 1380px)/2));gap:30px}.footer-brand img{
  html{scroll-padding-top:88px}.site-header{height:60px;width:calc(100% - 28px);top:10px;padding:4px 6px 4px 7px;border-radius:999px}.brand{width:50px;height:50px}.brand-lockup{padding:5px}.menu-toggle{width:48px;height:48px;border-radius:50%;position:relative;z-index:3}.main-nav{top:68px;left:0;right:0;padding:7px;border-radius:24px;background:rgba(9,11,12,.88);border:1px solid rgba(255,255,255,.16);box-shadow:0 30px 80px rgba(0,0,0,.52);gap:2px}.main-nav>a{height:48px;border-radius:15px;padding:0 15px}.main-nav>a:not(.quote-btn):after{bottom:7px;left:15px;width:20px}.main-nav>a.active{background:rgba(255,100,28,.1)}.quote-btn{height:48px!important;border-radius:999px!important;margin:6px 0 0!important}.hero{min-height:0;padding-top:0}.hero-content{padding:120px 20px 30px;width:100%;max-width:none}.hero h1{font-size:clamp(46px,12.5vw,66px);line-height:.93;letter-spacing:-3px;margin-bottom:22px}.hero-text{font-size:15px;line-height:1.7}.hero-actions{display:grid;grid-template-columns:1fr;gap:10px}.hero-actions a{min-height:52px}.trust-row{margin-top:32px;grid-template-columns:1fr 1fr;display:grid;gap:18px}.trust-row>div{margin:0;padding:0;border:0;gap:9px}.trust-row>div:nth-child(3){grid-column:1/-1}.hero-visual{position:relative;right:auto;width:calc(100% - 40px);height:330px;margin:10px 20px 36px}.visual-frame{inset:10px 0 10px 0;border-radius:28px;transform:rotate(1deg)}.floating-card{padding:13px 14px;min-width:0;width:160px;border-radius:16px}.floating-card.top{top:2px;right:-3px}.floating-card.bottom{left:-5px;bottom:2px}.signal-strip{height:58px}.signal-track{gap:24px}.signal-track span{font-size:9px;letter-spacing:2px}.products-section,.dark-section,.brands-section,.industries-section,.contact-section{padding:82px 20px}.products-section>.section-heading{padding-top:0}.section-heading{margin-bottom:36px}.section-heading h2{font-size:clamp(36px,9vw,50px);letter-spacing:-2px}.section-heading .subheading{font-size:14px}.product-grid{display:grid;grid-template-columns:1fr;gap:12px}.product-card,.product-card:nth-child(1),.product-card:nth-child(2),.product-card:nth-child(7){grid-column:auto}.product-card img{height:230px}.product-card div{min-height:84px;padding:16px}.dark-section{overflow:hidden}.split{grid-template-columns:1fr;gap:28px}.split h2{font-size:clamp(40px,10vw,56px);letter-spacing:-2.5px}.body-copy{font-size:15px}.about-metrics{grid-template-columns:1fr 1fr;margin-top:55px}.about-metrics div{padding:20px 10px}.brands-section .brand-strip{grid-template-columns:1fr;gap:12px;margin-top:32px}.brand-card{min-height:190px;border-radius:22px;padding:26px}.brand-name{font-size:26px}.industries-section{padding-bottom:88px}.industry-grid{grid-template-columns:1fr 1fr;border-radius:20px}.industry-grid div{min-height:210px;padding:22px}.industry-grid h3{font-size:18px;margin-top:55px}.industry-grid p{font-size:12px}.contact-inner{grid-template-columns:1fr;gap:40px}.contact-inner h2{font-size:clamp(40px,10vw,55px);letter-spacing:-2.5px}.quote-form{padding:22px;border-radius:22px}.quote-form .primary-btn{width:100%}footer{padding:34px 20px;flex-direction:column;align-items:flex-start}.footer-brand img{width:62px!important;height:62px!important}
 }
 @media(max-width:520px){.site-header{width:calc(100% - 20px);top:8px}.hero-content{padding:110px 18px 26px}.hero h1{font-size:46px}.hero-visual{width:calc(100% - 36px);margin-left:18px;margin-right:18px;height:285px}.signal-track{animation-duration:24s}.trust-row{gap:16px}.product-card img{height:215px}.industry-grid{grid-template-columns:1fr}.industry-grid div{min-height:185px}.industry-grid h3{margin-top:48px}}
+
+/* Official RES Technologies brand lockup */
+.site-header .brand{
+  width:248px;
+  height:54px;
+  padding:0;
+  border-radius:14px;
+  background:transparent;
+  border:0;
+  box-shadow:none;
+  overflow:visible;
+  flex:0 0 auto;
+}
+.site-header .brand:hover{
+  transform:translateY(-1px);
+  box-shadow:none;
+}
+.site-header .brand-lockup{
+  width:240px;
+  height:50px;
+  padding:0;
+  object-fit:contain;
+  object-position:left center;
+  display:block;
+}
+footer .footer-brand{
+  display:flex;
+  align-items:center;
+}
+footer .footer-brand img{
+  width:250px!important;
+  height:58px!important;
+  padding:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  object-fit:contain!important;
+  object-position:left center!important;
+  box-shadow:none!important;
+}
+@media(max-width:1100px){
+  .site-header .brand{width:205px;height:50px}
+  .site-header .brand-lockup{width:200px;height:46px}
+}
+@media(max-width:800px){
+  .site-header .brand{
+    width:190px;
+    height:48px;
+    border-radius:10px;
+  }
+  .site-header .brand-lockup{
+    width:185px;
+    height:44px;
+    padding:0;
+  }
+  footer .footer-brand img{
+    width:220px!important;
+    height:52px!important;
+  }
+}
+@media(max-width:520px){
+  .site-header .brand{width:172px;height:46px}
+  .site-header .brand-lockup{width:168px;height:42px}
+  footer .footer-brand img{width:200px!important;height:48px!important}
+}
