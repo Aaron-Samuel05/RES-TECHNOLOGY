@@ -34,3 +34,34 @@ revealTargets.forEach((el,index)=>{el.classList.add('reveal');el.style.transitio
 if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});revealTargets.forEach(el=>observer.observe(el))}else{revealTargets.forEach(el=>el.classList.add('is-visible'))}
 menu?.addEventListener('keydown',e=>{if(e.key==='Escape'){nav?.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.focus()}});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav?.classList.contains('open')){nav.classList.remove('open');menu?.setAttribute('aria-expanded','false')}});
+
+/* Subtle pointer + scroll parallax for the hero. Disabled on touch/reduced-motion. */
+(()=>{
+  const hero=document.querySelector('.hero');
+  if(!hero || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const layers=[...hero.querySelectorAll('[data-parallax]')];
+  let raf=0,lastY=window.scrollY;
+  const render=()=>{
+    raf=0;
+    const rect=hero.getBoundingClientRect();
+    const progress=Math.max(-1,Math.min(1,-rect.top/Math.max(hero.offsetHeight,1)));
+    layers.forEach(el=>{
+      const depth=Number(el.dataset.parallax||0);
+      const base=progress*depth*70;
+      el.style.transform=`translate3d(0,${base.toFixed(1)}px,0)`;
+    });
+  };
+  const onScroll=()=>{lastY=window.scrollY;if(!raf)raf=requestAnimationFrame(render)};
+  window.addEventListener('scroll',onScroll,{passive:true});
+  render();
+  if(window.matchMedia('(hover:hover) and (pointer:fine)').matches){
+    hero.addEventListener('pointermove',e=>{
+      const r=hero.getBoundingClientRect(), x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+      layers.forEach(el=>{
+        const depth=Number(el.dataset.parallax||0);
+        el.style.transform=`translate3d(${(x*depth*28).toFixed(1)}px,${(y*depth*18).toFixed(1)}px,0)`;
+      });
+    });
+    hero.addEventListener('pointerleave',()=>render());
+  }
+})();
