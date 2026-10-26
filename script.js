@@ -1,10 +1,10 @@
 const menu=document.querySelector('.menu-toggle');
 const nav=document.querySelector('.main-nav');
-menu?.addEventListener('click',()=>{nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(nav.classList.contains('open')))});
-document.querySelectorAll('.main-nav a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu?.setAttribute('aria-expanded','false')}));
+menu?.addEventListener('click',()=>{nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(nav.classList.contains('open')));menu.setAttribute('aria-label',nav.classList.contains('open')?'Close navigation':'Open navigation')});
+document.querySelectorAll('.main-nav a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu?.setAttribute('aria-expanded','false');menu?.setAttribute('aria-label','Open navigation')}));
 
 const RES_EMAIL='sales@restech.in';
-const TEST_EMAIL='aaronsamuel0205@gmail.com';
+const TEST_EMAIL='';
 const RES_LOGO='assets/res-technologies-official.svg'
 
 document.querySelectorAll('.brand-lockup,.footer-brand img').forEach(img=>{img.src=RES_LOGO;img.alt='RES Technologies'});
@@ -23,7 +23,7 @@ if(quoteForm){
  let status=quoteForm.querySelector('.form-status');if(!status){status=document.createElement('p');status.className='form-status';status.setAttribute('aria-live','polite');quoteForm.appendChild(status)}
  quoteForm.addEventListener('submit',async e=>{
   e.preventDefault();const original=button?.textContent||'REQUEST A QUOTE';if(button){button.disabled=true;button.textContent='SENDING...'}status.textContent='';
-  const data=new FormData(quoteForm);data.append('_subject','New RES Technologies website enquiry');data.append('_template','table');data.append('_cc',TEST_EMAIL);data.append('_captcha','false');
+  const data=new FormData(quoteForm);data.append('_subject','New RES Technologies website enquiry');data.append('_template','table');if(TEST_EMAIL) data.append('_cc',TEST_EMAIL);data.append('_captcha','false');
   try{const r=await fetch(`https://formsubmit.co/ajax/${RES_EMAIL}`,{method:'POST',headers:{Accept:'application/json'},body:data});if(!r.ok)throw new Error('Submission failed');quoteForm.reset();status.textContent='Thank you! Your enquiry has been sent successfully.';status.style.color='#17803d'}catch(err){status.textContent='Sorry, we could not send your enquiry. Please email us directly at '+RES_EMAIL+'.';status.style.color='#c0392b'}finally{if(button){button.disabled=false;button.textContent=original}}
  });
 }
@@ -33,7 +33,7 @@ const revealTargets=document.querySelectorAll('section:not(.signal-strip), .prod
 revealTargets.forEach((el,index)=>{el.classList.add('reveal');el.style.transitionDelay=Math.min(index*35,280)+'ms'});
 if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});revealTargets.forEach(el=>observer.observe(el))}else{revealTargets.forEach(el=>el.classList.add('is-visible'))}
 menu?.addEventListener('keydown',e=>{if(e.key==='Escape'){nav?.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.focus()}});
-document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav?.classList.contains('open')){nav.classList.remove('open');menu?.setAttribute('aria-expanded','false')}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav?.classList.contains('open')){nav.classList.remove('open');menu?.setAttribute('aria-expanded','false');menu?.setAttribute('aria-label','Open navigation')}});
 
 /* Subtle pointer + scroll parallax for the hero. Disabled on touch/reduced-motion. */
 (()=>{
